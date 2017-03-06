@@ -24,7 +24,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def page_accueil():
-    articles = get_bd().get_article_limite(5)
+    limite='5'
+    articles = get_db().get_article_limite(limite)
     return render_template('index.html', titre="Acceuil",  sous_titre="Pour les amoureux de la simplicité",articles=articles)
 
 
